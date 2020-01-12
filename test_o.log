@@ -1,0 +1,97 @@
+
+test.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <ml_func>:
+   0:	b410      	push	{r4}
+   2:	4b06      	ldr	r3, [pc, #24]	; (1c <ml_func+0x1c>)
+   4:	4c06      	ldr	r4, [pc, #24]	; (20 <ml_func+0x20>)
+   6:	4a07      	ldr	r2, [pc, #28]	; (24 <ml_func+0x24>)
+   8:	447b      	add	r3, pc
+   a:	591c      	ldr	r4, [r3, r4]
+   c:	589a      	ldr	r2, [r3, r2]
+   e:	6824      	ldr	r4, [r4, #0]
+  10:	6812      	ldr	r2, [r2, #0]
+  12:	4420      	add	r0, r4
+  14:	4408      	add	r0, r1
+  16:	4410      	add	r0, r2
+  18:	bc10      	pop	{r4}
+  1a:	4770      	bx	lr
+  1c:	00000010 	andeq	r0, r0, r0, lsl r0
+	...
+
+00000028 <ml_func3>:
+  28:	4b03      	ldr	r3, [pc, #12]	; (38 <ml_func3+0x10>)
+  2a:	4a04      	ldr	r2, [pc, #16]	; (3c <ml_func3+0x14>)
+  2c:	447b      	add	r3, pc
+  2e:	589b      	ldr	r3, [r3, r2]
+  30:	f843 1020 	str.w	r1, [r3, r0, lsl #2]
+  34:	4770      	bx	lr
+  36:	bf00      	nop
+  38:	00000008 	andeq	r0, r0, r8
+  3c:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .data:
+
+00000000 <myglob>:
+   0:	0000002a 	andeq	r0, r0, sl, lsr #32
+
+Disassembly of section .bss:
+
+00000000 <aaa>:
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	43434700 	movtmi	r4, #14080	; 0x3700
+   4:	4728203a 			; <UNDEFINED> instruction: 0x4728203a
+   8:	5420554e 	strtpl	r5, [r0], #-1358	; 0xfffffab2
+   c:	736c6f6f 	cmnvc	ip, #444	; 0x1bc
+  10:	726f6620 	rsbvc	r6, pc, #32, 12	; 0x2000000
+  14:	6d724120 	ldfvse	f4, [r2, #-128]!	; 0xffffff80
+  18:	626d4520 	rsbvs	r4, sp, #32, 10	; 0x8000000
+  1c:	65646465 	strbvs	r6, [r4, #-1125]!	; 0xfffffb9b
+  20:	72502064 	subsvc	r2, r0, #100, 0	; 0x64
+  24:	7365636f 	cmnvc	r5, #-1140850687	; 0xbc000001
+  28:	73726f73 	cmnvc	r2, #460	; 0x1cc
+  2c:	322d3920 	eorcc	r3, sp, #32, 18	; 0x80000
+  30:	2d393130 	ldfcss	f3, [r9, #-192]!	; 0xffffff40
+  34:	6d2d3471 	cfstrsvs	mvf3, [sp, #-452]!	; 0xfffffe3c
+  38:	726f6a61 	rsbvc	r6, pc, #397312	; 0x61000
+  3c:	2e392029 	cdpcs	0, 3, cr2, cr9, cr9, {1}
+  40:	20312e32 	eorscs	r2, r1, r2, lsr lr
+  44:	39313032 	ldmdbcc	r1!, {r1, r4, r5, ip, sp}
+  48:	35323031 	ldrcc	r3, [r2, #-49]!	; 0xffffffcf
+  4c:	65722820 	ldrbvs	r2, [r2, #-2080]!	; 0xfffff7e0
+  50:	7361656c 	cmnvc	r1, #108, 10	; 0x1b000000
+  54:	5b202965 	blpl	80a5f0 <ml_func3+0x80a5c8>
+  58:	2f4d5241 	svccs	0x004d5241
+  5c:	2d6d7261 	sfmcs	f7, 2, [sp, #-388]!	; 0xfffffe7c
+  60:	72622d39 	rsbvc	r2, r2, #3648	; 0xe40
+  64:	68636e61 	stmdavs	r3!, {r0, r5, r6, r9, sl, fp, sp, lr}^
+  68:	76657220 	strbtvc	r7, [r5], -r0, lsr #4
+  6c:	6f697369 	svcvs	0x00697369
+  70:	3732206e 	ldrcc	r2, [r2, -lr, rrx]!
+  74:	39393537 	ldmdbcc	r9!, {r0, r1, r2, r4, r5, r8, sl, ip, sp}
+  78:	Address 0x0000000000000078 is out of bounds.
+
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002d41 	andeq	r2, r0, r1, asr #26
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000023 	andeq	r0, r0, r3, lsr #32
+  10:	2d453705 	stclcs	7, cr3, [r5, #-20]	; 0xffffffec
+  14:	0d06004d 	stceq	0, cr0, [r6, #-308]	; 0xfffffecc
+  18:	02094d07 	andeq	r4, r9, #448	; 0x1c0
+  1c:	01140412 	tsteq	r4, r2, lsl r4
+  20:	03170115 	tsteq	r7, #1073741829	; 0x40000005
+  24:	01190118 	tsteq	r9, r8, lsl r1
+  28:	021e011a 	andseq	r0, lr, #-2147483642	; 0x80000006
+  2c:	Address 0x000000000000002c is out of bounds.
+
