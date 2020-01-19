@@ -1,0 +1,67 @@
+Component: ARM Compiler 5.05 (build 41) Tool: armlink [4d0eb9]
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    test.c                                   0x00000000   Number         0  test.o ABSOLUTE
+    test2.c                                  0x00000000   Number         0  test2.o ABSOLUTE
+    .data                                    0x00000004   Section        4  test.o(.data)
+    .data                                    0x00000008   Section        4  test2.o(.data)
+    .bss                                     0x0000000c   Section      128  test.o(.bss)
+    .text                                    0x00008000   Section        0  test.o(.text)
+    .text                                    0x00008040   Section        0  test2.o(.text)
+    .constdata                               0x00008060   Section        4  test.o(.constdata)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    myglob                                   0x00000004   Data           4  test.o(.data)
+    f                                        0x00000008   Data           4  test2.o(.data)
+    aaa                                      0x0000000c   Data         128  test.o(.bss)
+    ml_func                                  0x00008001   Thumb Code    20  test.o(.text)
+    ml_func2                                 0x00008015   Thumb Code    20  test.o(.text)
+    ml_func3                                 0x00008029   Thumb Code    10  test.o(.text)
+    ml_func4                                 0x00008041   Thumb Code    18  test2.o(.text)
+    myconst                                  0x00008060   Data           4  test.o(.constdata)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00008041
+
+  Load Region LR_1 (Base: 0x00008000, Size: 0x00000070, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RW (Base: 0x00000000, Size: 0x0000000c, Max: 0xffffffff, PI)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000004   Data   RW           32    PDT$$ptr            anon$$obj.o
+    0x00000004   0x00000004   Data   RW            4    .data               test.o
+    0x00000008   0x00000004   Data   RW           19    .data               test2.o
+
+
+    Execution Region ER_ZI (Base: 0x0000000c, Size: 0x00000080, Max: 0xffffffff, PI)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x0000000c   0x00000080   Zero   RW            2    .bss                test.o
+
+
+    Execution Region ER_RO (Base: 0x00008000, Size: 0x00000064, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00008000   0x00000040   Code   RO            1    .text               test.o
+    0x00008040   0x00000020   Code   RO           18  * .text               test2.o
+    0x00008060   0x00000004   Data   RO            3    .constdata          test.o
+
