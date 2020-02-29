@@ -13,7 +13,7 @@
     File Type: ET_EXEC (Executable) (2)
     Machine: EM_ARM (ARM)
 
-    Image Entry point: 0x00008041
+    Image Entry point: 0x0001c041
     Flags: EF_ARM_HASENTRY (0x05000002)
 
     ARM ELF revision: 5 (ABI version 2)
@@ -29,8 +29,8 @@
     Program header entries: 1
     Section header entries: 15
 
-    Program header offset: 4664 (0x00001238)
-    Section header offset: 4696 (0x00001258)
+    Program header offset: 4684 (0x0000124c)
+    Section header offset: 4716 (0x0000126c)
 
     Section header string table index: 14
 
@@ -38,81 +38,81 @@
 
 ** Program header #0 (PT_LOAD) [PF_X + PF_W + PF_R + PF_ARM_SB + PF_ARM_ENTRY]
     Size : 240 bytes (112 bytes in file)
-    Virtual address: 0x00008000 (Alignment 4)
+    Virtual address: 0x0001c000 (Alignment 4)
 
 
 ========================================================================
 
 ** Section #1 'ER_RO' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
     Size   : 100 bytes (alignment 4)
-    Address: 0x00008000
+    Address: 0x0001c000
 
     $t
     .text
     ml_func
-        0x00008000:    4a0c        .J      LDR      r2,[pc,#48] ; [0x8034] = 0xc
-        0x00008002:    4b0d        .K      LDR      r3,[pc,#52] ; [0x8038] = 0x4
-        0x00008004:    444a        JD      ADD      r2,r2,r9
-        0x00008006:    444b        KD      ADD      r3,r3,r9
-        0x00008008:    6812        .h      LDR      r2,[r2,#0]
-        0x0000800a:    681b        .h      LDR      r3,[r3,#0]
-        0x0000800c:    4408        .D      ADD      r0,r0,r1
-        0x0000800e:    441a        .D      ADD      r2,r2,r3
-        0x00008010:    4410        .D      ADD      r0,r0,r2
-        0x00008012:    4770        pG      BX       lr
+        0x0001c000:    4a0c        .J      LDR      r2,[pc,#48] ; [0x1c034] = 0xc
+        0x0001c002:    4b0d        .K      LDR      r3,[pc,#52] ; [0x1c038] = 0x4
+        0x0001c004:    444a        JD      ADD      r2,r2,r9
+        0x0001c006:    444b        KD      ADD      r3,r3,r9
+        0x0001c008:    6812        .h      LDR      r2,[r2,#0]
+        0x0001c00a:    681b        .h      LDR      r3,[r3,#0]
+        0x0001c00c:    4408        .D      ADD      r0,r0,r1
+        0x0001c00e:    441a        .D      ADD      r2,r2,r3
+        0x0001c010:    4410        .D      ADD      r0,r0,r2
+        0x0001c012:    4770        pG      BX       lr
     ml_func2
-        0x00008014:    4908        .I      LDR      r1,[pc,#32] ; [0x8038] = 0x4
-        0x00008016:    4807        .H      LDR      r0,[pc,#28] ; [0x8034] = 0xc
-        0x00008018:    4449        ID      ADD      r1,r1,r9
-        0x0000801a:    4448        HD      ADD      r0,r0,r9
-        0x0000801c:    6809        .h      LDR      r1,[r1,#0]
-        0x0000801e:    4a07        .J      LDR      r2,[pc,#28] ; [0x803c] = 0xdeadbeaf
-        0x00008020:    6800        .h      LDR      r0,[r0,#0]
-        0x00008022:    4411        .D      ADD      r1,r1,r2
-        0x00008024:    4408        .D      ADD      r0,r0,r1
-        0x00008026:    4770        pG      BX       lr
+        0x0001c014:    4908        .I      LDR      r1,[pc,#32] ; [0x1c038] = 0x4
+        0x0001c016:    4807        .H      LDR      r0,[pc,#28] ; [0x1c034] = 0xc
+        0x0001c018:    4449        ID      ADD      r1,r1,r9
+        0x0001c01a:    4448        HD      ADD      r0,r0,r9
+        0x0001c01c:    6809        .h      LDR      r1,[r1,#0]
+        0x0001c01e:    4a07        .J      LDR      r2,[pc,#28] ; [0x1c03c] = 0xdeadbeaf
+        0x0001c020:    6800        .h      LDR      r0,[r0,#0]
+        0x0001c022:    4411        .D      ADD      r1,r1,r2
+        0x0001c024:    4408        .D      ADD      r0,r0,r1
+        0x0001c026:    4770        pG      BX       lr
     ml_func3
-        0x00008028:    4a02        .J      LDR      r2,[pc,#8] ; [0x8034] = 0xc
-        0x0000802a:    444a        JD      ADD      r2,r2,r9
-        0x0000802c:    f8421020    B. .    STR      r1,[r2,r0,LSL #2]
-        0x00008030:    e7f0        ..      B        ml_func2 ; 0x8014
+        0x0001c028:    4a02        .J      LDR      r2,[pc,#8] ; [0x1c034] = 0xc
+        0x0001c02a:    444a        JD      ADD      r2,r2,r9
+        0x0001c02c:    f8421020    B. .    STR      r1,[r2,r0,LSL #2]
+        0x0001c030:    e7f0        ..      B        ml_func2 ; 0x1c014
     $d
-        0x00008032:    0000        ..      DCW    0
-        0x00008034:    0000000c    ....    DCD    12
-        0x00008038:    00000004    ....    DCD    4
-        0x0000803c:    deadbeaf    ....    DCD    3735928495
+        0x0001c032:    0000        ..      DCW    0
+        0x0001c034:    0000000c    ....    DCD    12
+        0x0001c038:    00000004    ....    DCD    4
+        0x0001c03c:    deadbeaf    ....    DCD    3735928495
     $t
     .text
     ml_func4
-        0x00008040:    4804        .H      LDR      r0,[pc,#16] ; [0x8054] = 0x4
-        0x00008042:    4448        HD      ADD      r0,r0,r9
-        0x00008044:    6801        .h      LDR      r1,[r0,#0]
-        0x00008046:    4804        .H      LDR      r0,[pc,#16] ; [0x8058] = 0x14
-        0x00008048:    4478        xD      ADD      r0,r0,pc
-        0x0000804a:    4a04        .J      LDR      r2,[pc,#16] ; [0x805c] = 0x8
-        0x0000804c:    6800        .h      LDR      r0,[r0,#0]
-        0x0000804e:    444a        JD      ADD      r2,r2,r9
-        0x00008050:    6812        .h      LDR      r2,[r2,#0]
-        0x00008052:    4710        .G      BX       r2
+        0x0001c040:    4804        .H      LDR      r0,[pc,#16] ; [0x1c054] = 0x4
+        0x0001c042:    4448        HD      ADD      r0,r0,r9
+        0x0001c044:    6801        .h      LDR      r1,[r0,#0]
+        0x0001c046:    4804        .H      LDR      r0,[pc,#16] ; [0x1c058] = 0x14
+        0x0001c048:    4478        xD      ADD      r0,r0,pc
+        0x0001c04a:    4a04        .J      LDR      r2,[pc,#16] ; [0x1c05c] = 0x8
+        0x0001c04c:    6800        .h      LDR      r0,[r0,#0]
+        0x0001c04e:    444a        JD      ADD      r2,r2,r9
+        0x0001c050:    6812        .h      LDR      r2,[r2,#0]
+        0x0001c052:    4710        .G      BX       r2
     $d
-        0x00008054:    00000004    ....    DCD    4
-        0x00008058:    00000014    ....    DCD    20
-        0x0000805c:    00000008    ....    DCD    8
+        0x0001c054:    00000004    ....    DCD    4
+        0x0001c058:    00000014    ....    DCD    20
+        0x0001c05c:    00000008    ....    DCD    8
     $d.realdata
     .constdata
     myconst
-        0x00008060:    deadbeaf    ....    DCD    3735928495
+        0x0001c060:    deadbeaf    ....    DCD    3735928495
 
 ** Section #2 'ER_RW' (SHT_PROGBITS) [SHF_ALLOC + SHF_WRITE]
     Size   : 12 bytes (alignment 4)
-    Address: 0x00000000
+    Address: 0x0000b000
 
-    0x000000:   00 00 00 00 2a 00 00 00 01 80 00 00                ....*.......
+    0x00b000:   00 00 00 00 2a 00 00 00 01 c0 01 00                ....*.......
 
 
 ** Section #3 'ER_ZI' (SHT_NOBITS) [SHF_ALLOC + SHF_WRITE]
     Size   : 128 bytes (alignment 4)
-    Address: 0x0000000c
+    Address: 0x0000b00c
 
 
 ** Section #4 '.debug_abbrev' (SHT_PROGBITS)
@@ -154,7 +154,7 @@
 
 
 ** Section #13 '.comment' (SHT_PROGBITS)
-    Size   : 352 bytes
+    Size   : 372 bytes
 
 
 ** Section #14 '.shstrtab' (SHT_STRTAB)

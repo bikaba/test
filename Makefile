@@ -1,7 +1,7 @@
 all: test.axf
 
 test.axf: test.o test2.o
-	armlink.exe --cpu=Cortex-m4f --rwpi --rw-base=0x0 --ro-base=0x8000 --entry=ml_func4 test.o test2.o --map --symbols --list test.map -o test.axf
+	armlink.exe --cpu=Cortex-m4f --rwpi --rw-base=0xb000 --ro-base=0x1c000 --entry=ml_func4 test.o test2.o --map --symbols --list test.map -o test.axf
 	fromelf.exe --text -dc test.axf > test_axf.log
 
 test.elf: test.o
