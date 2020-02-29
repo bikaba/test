@@ -21,14 +21,14 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     myglob                                   0x00000004   Data           4  test.o(.data)
     f                                        0x00000008   Data           4  test2.o(.data)
     aaa                                      0x0000000c   Data         128  test.o(.bss)
     ml_func                                  0x00008001   Thumb Code    20  test.o(.text)
     ml_func2                                 0x00008015   Thumb Code    20  test.o(.text)
     ml_func3                                 0x00008029   Thumb Code    10  test.o(.text)
-    ml_func4                                 0x00008041   Thumb Code    18  test2.o(.text)
+    ml_func4                                 0x00008041   Thumb Code    20  test2.o(.text)
     myconst                                  0x00008060   Data           4  test.o(.constdata)
 
 
