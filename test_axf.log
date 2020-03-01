@@ -13,7 +13,7 @@
     File Type: ET_EXEC (Executable) (2)
     Machine: EM_ARM (ARM)
 
-    Image Entry point: 0x0000806d
+    Image Entry point: 0x00008081
     Flags: EF_ARM_HASENTRY (0x05000002)
 
     ARM ELF revision: 5 (ABI version 2)
@@ -30,14 +30,14 @@
     Section header entries: 22
 
     Program header offset: 52 (0x00000034)
-    Section header offset: 5804 (0x000016ac)
+    Section header offset: 5956 (0x00001744)
 
     Section header string table index: 21
 
 ========================================================================
 
 ** Program header #0 (PT_LOAD) [PF_X + PF_W + PF_R + PF_ARM_SB + PF_ARM_ENTRY]
-    Size : 320 bytes (192 bytes in file)
+    Size : 356 bytes (228 bytes in file)
     Virtual address: 0x00008000 (Alignment 4)
 
 
@@ -51,14 +51,14 @@
 ========================================================================
 
 ** Section #1 'ER_RO' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
-    Size   : 176 bytes (alignment 4)
+    Size   : 212 bytes (alignment 4)
     Address: 0x00008000
 
     $t
     .text
     ml_func
-        0x00008000:    4a15        .J      LDR      r2,[pc,#84] ; [0x8058] = 0x10
-        0x00008002:    4b16        .K      LDR      r3,[pc,#88] ; [0x805c] = 0x4
+        0x00008000:    4a1a        .J      LDR      r2,[pc,#104] ; [0x806c] = 0x10
+        0x00008002:    4b1b        .K      LDR      r3,[pc,#108] ; [0x8070] = 0x4
         0x00008004:    444a        JD      ADD      r2,r2,r9
         0x00008006:    444b        KD      ADD      r3,r3,r9
         0x00008008:    6812        .h      LDR      r2,[r2,#0]
@@ -68,79 +68,93 @@
         0x00008010:    4410        .D      ADD      r0,r0,r2
         0x00008012:    4770        pG      BX       lr
     ml_func2
-        0x00008014:    4911        .I      LDR      r1,[pc,#68] ; [0x805c] = 0x4
-        0x00008016:    4810        .H      LDR      r0,[pc,#64] ; [0x8058] = 0x10
+        0x00008014:    4916        .I      LDR      r1,[pc,#88] ; [0x8070] = 0x4
+        0x00008016:    4815        .H      LDR      r0,[pc,#84] ; [0x806c] = 0x10
         0x00008018:    4449        ID      ADD      r1,r1,r9
         0x0000801a:    4448        HD      ADD      r0,r0,r9
         0x0000801c:    6809        .h      LDR      r1,[r1,#0]
-        0x0000801e:    4a10        .J      LDR      r2,[pc,#64] ; [0x8060] = 0xdeadbeaf
+        0x0000801e:    4a15        .J      LDR      r2,[pc,#84] ; [0x8074] = 0xdeadbeaf
         0x00008020:    6800        .h      LDR      r0,[r0,#0]
         0x00008022:    4411        .D      ADD      r1,r1,r2
         0x00008024:    4408        .D      ADD      r0,r0,r1
         0x00008026:    4770        pG      BX       lr
     ml_funcg
-        0x00008028:    b510        ..      PUSH     {r4,lr}
-        0x0000802a:    480e        .H      LDR      r0,[pc,#56] ; [0x8064] = 0xc004
+        0x00008028:    4813        .H      LDR      r0,[pc,#76] ; [0x8078] = 0xc004
+        0x0000802a:    b510        ..      PUSH     {r4,lr}
         0x0000802c:    4448        HD      ADD      r0,r0,r9
         0x0000802e:    6800        .h      LDR      r0,[r0,#0]
-        0x00008030:    f000f832    ..2.    BL       $Ven$TT$L$$lib_func1 ; 0x8098
-        0x00008034:    480c        .H      LDR      r0,[pc,#48] ; [0x8068] = 0x10000008
+        0x00008030:    f000f844    ..D.    BL       $Ven$TT$L$$lib_func1 ; 0x80bc
+        0x00008034:    4811        .H      LDR      r0,[pc,#68] ; [0x807c] = 0x10000008
         0x00008036:    4448        HD      ADD      r0,r0,r9
         0x00008038:    6800        .h      LDR      r0,[r0,#0]
-        0x0000803a:    f000f832    ..2.    BL       $Ven$TT$L$$lib_func2 ; 0x80a2
-        0x0000803e:    f000f81f    ....    BL       ml_func5 ; 0x8080
+        0x0000803a:    f000f844    ..D.    BL       $Ven$TT$L$$lib_func2 ; 0x80c6
+        0x0000803e:    f000f829    ..).    BL       ml_func5 ; 0x8094
         0x00008042:    bd10        ..      POP      {r4,pc}
     ml_func3
-        0x00008044:    b510        ..      PUSH     {r4,lr}
-        0x00008046:    4a04        .J      LDR      r2,[pc,#16] ; [0x8058] = 0x10
+        0x00008044:    4a09        .J      LDR      r2,[pc,#36] ; [0x806c] = 0x10
+        0x00008046:    b510        ..      PUSH     {r4,lr}
         0x00008048:    444a        JD      ADD      r2,r2,r9
         0x0000804a:    f8421020    B. .    STR      r1,[r2,r0,LSL #2]
-        0x0000804e:    f7ffffe1    ....    BL       ml_func2 ; 0x8014
-        0x00008052:    e8bd4010    ...@    POP      {r4,lr}
-        0x00008056:    e7e7        ..      B        ml_funcg ; 0x8028
+        0x0000804e:    480a        .H      LDR      r0,[pc,#40] ; [0x8078] = 0xc004
+        0x00008050:    4448        HD      ADD      r0,r0,r9
+        0x00008052:    6800        .h      LDR      r0,[r0,#0]
+        0x00008054:    f000f832    ..2.    BL       $Ven$TT$L$$lib_func1 ; 0x80bc
+        0x00008058:    4808        .H      LDR      r0,[pc,#32] ; [0x807c] = 0x10000008
+        0x0000805a:    4448        HD      ADD      r0,r0,r9
+        0x0000805c:    6800        .h      LDR      r0,[r0,#0]
+        0x0000805e:    f000f832    ..2.    BL       $Ven$TT$L$$lib_func2 ; 0x80c6
+        0x00008062:    e8bd4010    ...@    POP      {r4,lr}
+        0x00008066:    f000b815    ....    B.W      ml_func5 ; 0x8094
     $d
-        0x00008058:    00000010    ....    DCD    16
-        0x0000805c:    00000004    ....    DCD    4
-        0x00008060:    deadbeaf    ....    DCD    3735928495
-        0x00008064:    0000c004    ....    DCD    49156
-        0x00008068:    10000008    ....    DCD    268435464
+        0x0000806a:    0000        ..      DCW    0
+        0x0000806c:    00000010    ....    DCD    16
+        0x00008070:    00000004    ....    DCD    4
+        0x00008074:    deadbeaf    ....    DCD    3735928495
+        0x00008078:    0000c004    ....    DCD    49156
+        0x0000807c:    10000008    ....    DCD    268435464
     $t
     .text
     ml_func4
-        0x0000806c:    4807        .H      LDR      r0,[pc,#28] ; [0x808c] = 0x4
-        0x0000806e:    4448        HD      ADD      r0,r0,r9
-        0x00008070:    6801        .h      LDR      r1,[r0,#0]
-        0x00008072:    4807        .H      LDR      r0,[pc,#28] ; [0x8090] = 0x34
-        0x00008074:    4478        xD      ADD      r0,r0,pc
-        0x00008076:    4a07        .J      LDR      r2,[pc,#28] ; [0x8094] = 0x8
-        0x00008078:    6800        .h      LDR      r0,[r0,#0]
-        0x0000807a:    444a        JD      ADD      r2,r2,r9
-        0x0000807c:    6812        .h      LDR      r2,[r2,#0]
-        0x0000807e:    4710        .G      BX       r2
+        0x00008080:    480b        .H      LDR      r0,[pc,#44] ; [0x80b0] = 0x4
+        0x00008082:    4448        HD      ADD      r0,r0,r9
+        0x00008084:    6801        .h      LDR      r1,[r0,#0]
+        0x00008086:    480b        .H      LDR      r0,[pc,#44] ; [0x80b4] = 0x44
+        0x00008088:    4478        xD      ADD      r0,r0,pc
+        0x0000808a:    4a0b        .J      LDR      r2,[pc,#44] ; [0x80b8] = 0x8
+        0x0000808c:    6800        .h      LDR      r0,[r0,#0]
+        0x0000808e:    444a        JD      ADD      r2,r2,r9
+        0x00008090:    6812        .h      LDR      r2,[r2,#0]
+        0x00008092:    4710        .G      BX       r2
     ml_func5
-        0x00008080:    4a04        .J      LDR      r2,[pc,#16] ; [0x8094] = 0x8
-        0x00008082:    21de        .!      MOVS     r1,#0xde
-        0x00008084:    444a        JD      ADD      r2,r2,r9
-        0x00008086:    20a5        .       MOVS     r0,#0xa5
-        0x00008088:    6852        Rh      LDR      r2,[r2,#4]
-        0x0000808a:    4710        .G      BX       r2
+        0x00008094:    4a08        .J      LDR      r2,[pc,#32] ; [0x80b8] = 0x8
+        0x00008096:    b510        ..      PUSH     {r4,lr}
+        0x00008098:    444a        JD      ADD      r2,r2,r9
+        0x0000809a:    21de        .!      MOVS     r1,#0xde
+        0x0000809c:    6852        Rh      LDR      r2,[r2,#4]
+        0x0000809e:    20a5        .       MOVS     r0,#0xa5
+        0x000080a0:    4790        .G      BLX      r2
+        0x000080a2:    2155        U!      MOVS     r1,#0x55
+        0x000080a4:    e8bd4010    ...@    POP      {r4,lr}
+        0x000080a8:    20de        .       MOVS     r0,#0xde
+        0x000080aa:    f7ffbfcb    ....    B.W      ml_func3 ; 0x8044
     $d
-        0x0000808c:    00000004    ....    DCD    4
-        0x00008090:    00000034    4...    DCD    52
-        0x00008094:    00000008    ....    DCD    8
+        0x000080ae:    0000        ..      DCW    0
+        0x000080b0:    00000004    ....    DCD    4
+        0x000080b4:    00000044    D...    DCD    68
+        0x000080b8:    00000008    ....    DCD    8
     $t
     $Ven$TT$L$$lib_func1
-        0x00008098:    f24c0c01    L...    MOV      r12,#0xc001
-        0x0000809c:    f2c00c00    ....    MOVT     r12,#0
-        0x000080a0:    4760        `G      BX       r12
+        0x000080bc:    f24c0c01    L...    MOV      r12,#0xc001
+        0x000080c0:    f2c00c00    ....    MOVT     r12,#0
+        0x000080c4:    4760        `G      BX       r12
     $Ven$TT$L$$lib_func2
-        0x000080a2:    f2480c15    H...    MOV      r12,#0x8015
-        0x000080a6:    f2c10c00    ....    MOVT     r12,#0x1000
-        0x000080aa:    4760        `G      BX       r12
+        0x000080c6:    f2480c15    H...    MOV      r12,#0x8015
+        0x000080ca:    f2c10c00    ....    MOVT     r12,#0x1000
+        0x000080ce:    4760        `G      BX       r12
     $d.realdata
     .constdata
     myconst
-        0x000080ac:    deadbeaf    ....    DCD    3735928495
+        0x000080d0:    deadbeaf    ....    DCD    3735928495
 
 ** Section #2 'ER_RW' (SHT_PROGBITS) [SHF_ALLOC + SHF_WRITE]
     Size   : 16 bytes (alignment 4)
@@ -189,19 +203,19 @@
 
 
 ** Section #12 '.debug_frame' (SHT_PROGBITS)
-    Size   : 416 bytes
+    Size   : 428 bytes
 
 
 ** Section #13 '.debug_info' (SHT_PROGBITS)
-    Size   : 1100 bytes
+    Size   : 1144 bytes
 
 
 ** Section #14 '.debug_line' (SHT_PROGBITS)
-    Size   : 176 bytes
+    Size   : 256 bytes
 
 
 ** Section #15 '.debug_loc' (SHT_PROGBITS)
-    Size   : 232 bytes
+    Size   : 180 bytes
 
 
 ** Section #16 '.debug_pubnames' (SHT_PROGBITS)
@@ -223,7 +237,7 @@
 
 
 ** Section #20 '.comment' (SHT_PROGBITS)
-    Size   : 360 bytes
+    Size   : 392 bytes
 
 
 ** Section #21 '.shstrtab' (SHT_STRTAB)

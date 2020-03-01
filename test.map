@@ -15,14 +15,14 @@ Image Symbol Table
     f2                                       0x0000000c   Data           4  test2.o(.data)
     .bss                                     0x00000010   Section      128  test.o(.bss)
     .text                                    0x00008000   Section        0  test.o(.text)
-    .text                                    0x0000806c   Section        0  test2.o(.text)
-    .constdata                               0x000080ac   Section        4  test.o(.constdata)
+    .text                                    0x00008080   Section        0  test2.o(.text)
+    .constdata                               0x000080d0   Section        4  test.o(.constdata)
 
     Global Symbols
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
     test.axf (EXPORTED)                      0x00000000   Data           0  anon$$obj.o ABSOLUTE
     _GLOBAL_OFFSET_TABLE_                     - Undefined Weak Reference
     myglob                                   0x00000004   Data           4  test.o(.data)
@@ -31,12 +31,12 @@ Image Symbol Table
     ml_func (EXPORTED)                       0x00008001   Thumb Code    20  test.o(.text)
     ml_func2                                 0x00008015   Thumb Code    20  test.o(.text)
     ml_funcg                                 0x00008029   Thumb Code    28  test.o(.text)
-    ml_func3                                 0x00008045   Thumb Code    20  test.o(.text)
-    ml_func4                                 0x0000806d   Thumb Code    20  test2.o(.text)
-    ml_func5                                 0x00008081   Thumb Code    12  test2.o(.text)
-    Long Thumb to Thumb Veneer to lib_func1  0x00008099   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to lib_func2  0x000080a3   Thumb Code    10  anon$$obj.o(Veneer$$Code)
-    myconst                                  0x000080ac   Data           4  test.o(.constdata)
+    ml_func3                                 0x00008045   Thumb Code    38  test.o(.text)
+    ml_func4                                 0x00008081   Thumb Code    20  test2.o(.text)
+    ml_func5                                 0x00008095   Thumb Code    26  test2.o(.text)
+    Long Thumb to Thumb Veneer to lib_func1  0x000080bd   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to lib_func2  0x000080c7   Thumb Code    10  anon$$obj.o(Veneer$$Code)
+    myconst                                  0x000080d0   Data           4  test.o(.constdata)
     lib_func1                                0x0000c001   Thumb Code     0  test.symdef ABSOLUTE
     gvar1                                    0x0000c004   Data           0  test.symdef ABSOLUTE
     gvar2                                    0x10000008   Data           0  test.symdef ABSOLUTE
@@ -48,17 +48,17 @@ Image Symbol Table
 
 Memory Map of the image
 
-  Image Entry point : 0x0000806d
+  Image Entry point : 0x00008081
 
-  Load Region LR_1 (Base: 0x00008000, Size: 0x000000c0, Max: 0xffffffff, PI)
+  Load Region LR_1 (Base: 0x00008000, Size: 0x000000e4, Max: 0xffffffff, PI)
 
     Execution Region ER_RW (Base: 0x00000000, Size: 0x00000010, Max: 0xffffffff, PI)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000004   Data   RW           33    PDT$$ptr            anon$$obj.o
+    0x00000000   0x00000004   Data   RW           34    PDT$$ptr            anon$$obj.o
     0x00000004   0x00000004   Data   RW            4    .data               test.o
-    0x00000008   0x00000008   Data   RW           20    .data               test2.o
+    0x00000008   0x00000008   Data   RW           21    .data               test2.o
 
 
     Execution Region ER_ZI (Base: 0x00000010, Size: 0x00000080, Max: 0xffffffff, PI)
@@ -68,13 +68,13 @@ Memory Map of the image
     0x00000010   0x00000080   Zero   RW            2    .bss                test.o
 
 
-    Execution Region ER_RO (Base: 0x00008000, Size: 0x000000b0, Max: 0xffffffff, PI)
+    Execution Region ER_RO (Base: 0x00008000, Size: 0x000000d4, Max: 0xffffffff, PI)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00008000   0x0000006c   Code   RO            1    .text               test.o
-    0x0000806c   0x0000002c   Code   RO           19  * .text               test2.o
-    0x00008098   0x0000000a   Ven    RO           35    Veneer$$Code        anon$$obj.o
-    0x000080a2   0x0000000a   Ven    RO           36    Veneer$$Code        anon$$obj.o
-    0x000080ac   0x00000004   Data   RO            3    .constdata          test.o
+    0x00008000   0x00000080   Code   RO            1    .text               test.o
+    0x00008080   0x0000003c   Code   RO           20  * .text               test2.o
+    0x000080bc   0x0000000a   Ven    RO           36    Veneer$$Code        anon$$obj.o
+    0x000080c6   0x0000000a   Ven    RO           37    Veneer$$Code        anon$$obj.o
+    0x000080d0   0x00000004   Data   RO            3    .constdata          test.o
 

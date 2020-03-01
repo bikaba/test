@@ -1,0 +1,16 @@
+#<SYMDEFS># ARM Linker, 5050041: Last Updated: Sun Mar 01 11:47:15 2020
+0x00000000 D test.axf
+0x00000004 D myglob
+0x00000008 D f
+0x00000010 D aaa
+0x00008001 T ml_func
+0x00008015 T ml_func2
+0x00008029 T ml_funcg
+0x00008045 T ml_func3
+0x00008081 T ml_func4
+0x00008095 T ml_func5
+0x000080d0 D myconst
+0x0000c001 T lib_func1
+0x0000c004 D gvar1
+0x10000008 D gvar2
+0x10008015 T lib_func2
