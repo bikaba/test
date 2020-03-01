@@ -1,4 +1,4 @@
-#<SYMDEFS># ARM Linker, 5050041: Last Updated: Sun Mar 01 11:47:15 2020
+#<SYMDEFS># ARM Linker, 5050041: Last Updated: Sun Mar 01 17:43:33 2020
 0x00000000 D test.axf
 0x00000004 D myglob
 0x00000008 D f

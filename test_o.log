@@ -463,9 +463,9 @@ Disassembly of section .debug_macinfo:
   18:	5f000100 	svcpl	0x00000100
   1c:	4d49545f 	cfstrdmi	mvd5, [r9, #-380]	; 0xfffffe84
   20:	205f5f45 	subscs	r5, pc, r5, asr #30
-  24:	3a313122 	bcc	c4c4b4 <ml_func3+0xc4c470>
-  28:	323a3333 	eorscc	r3, sl, #-872415232	; 0xcc000000
-  2c:	01002236 	tsteq	r0, r6, lsr r2
+  24:	3a373122 	bcc	dcc4b4 <ml_func3+0xdcc470>
+  28:	333a3334 	teqcc	sl, #52, 6	; 0xd0000000
+  2c:	01002233 	tsteq	r0, r3, lsr r2
   30:	535f5f00 	cmppl	pc, #0, 30
   34:	5f434454 	svcpl	0x00434454
   38:	0031205f 	eorseq	r2, r1, pc, asr r0
