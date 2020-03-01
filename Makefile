@@ -1,8 +1,10 @@
 all: test.axf
 
 test.axf: test.o test2.o
-	armlink.exe --cpu=Cortex-m4f --rwpi --rw-base=0xb000 --ro-base=0x1c000 --entry=ml_func4 test.o test2.o --map --symbols --list test.map -o test.axf
-	fromelf.exe --text -dc test.axf > test_axf.log
+#	armlink.exe --cpu=Cortex-m4f --rwpi --ropi --entry=ml_func4 test.o test2.o test.symdef --map --symbols --list test.map -o test.axf
+#	armlink.exe --cpu=Cortex-m4f --partial --entry=ml_func4 test.o test2.o test.symdef --map --symbols --list test.map -o test.axf
+	armlink.exe --cpu=Cortex-m4f --base_platform --rwpi --ropi --entry=ml_func4 test.o test2.o test.symdef --map --symbols --list test.map -o test.axf
+	fromelf.exe --text -dcr test.axf > test_axf.log
 
 test.elf: test.o
 	arm-none-eabi-ld -static -T test.lds -o test.elf test.o

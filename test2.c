@@ -8,3 +8,10 @@ void ml_func4(void)
 {
     f(myconst, myglob);
 }
+
+static const int (*f2)(int,int) = ml_func;
+
+void ml_func5(void)
+{
+    f2(0xa5, 0xde);
+}
